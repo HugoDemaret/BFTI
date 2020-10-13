@@ -17,8 +17,7 @@ def fileopening(int):
             line_string = line
             pre_image = []
             for letter in line_string:
-                ascii_value = a2b_uu(letter)
-                pre_image.append(ascii_value)
+                pre_image.append(letter)
     else:
         file_path = input("Enter your ascii file path: ")
         file = open(file_path, "r+")
@@ -27,6 +26,6 @@ def fileopening(int):
             line_string = line
             pre_image = []
             for letter in line_string:
-                ascii_value = a2b_uu(letter)
+                ascii_value = a2b_uu(letter) #Convert the caracters from ascii to binary code
                 pre_image.append(ascii_value)
     imagecreator(pre_image)
