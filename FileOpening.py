@@ -3,6 +3,7 @@ def fileopening():
     file = open(file_path, "r+")
     lines = file.readlines()
     for line in lines:
-        for letter in line:
+        line_string = line
+        for letter in line_string:
             print(letter)
     file.close()
