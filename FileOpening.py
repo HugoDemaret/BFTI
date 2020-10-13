@@ -1,4 +1,5 @@
 from binascii import *
+
 def imagecreator(array):
     pre_imagelength = len(array)
     i = pre_imagelength // 2
@@ -7,14 +8,25 @@ def imagecreator(array):
     print("i = ", i)
 
 
-def fileopening():
-    file_path = input("Enter your binary file path: ")
-    file = open(file_path, "r+")
-    lines = file.readlines()
-    for line in lines:
-        line_string = line
-        pre_image = []
-        for letter in line_string:
-            ascii_value = a2b_uu(letter)
-            pre_image.append(ascii_value)
+def fileopening(int):
+    if int == 1:
+        file_path = input("Enter your binary file path: ")
+        file = open(file_path, "r+")
+        lines = file.readlines()
+        for line in lines:
+            line_string = line
+            pre_image = []
+            for letter in line_string:
+                ascii_value = a2b_uu(letter)
+                pre_image.append(ascii_value)
+    else:
+        file_path = input("Enter your ascii file path: ")
+        file = open(file_path, "r+")
+        lines = file.readlines()
+        for line in lines:
+            line_string = line
+            pre_image = []
+            for letter in line_string:
+                ascii_value = a2b_uu(letter)
+                pre_image.append(ascii_value)
     imagecreator(pre_image)
