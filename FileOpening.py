@@ -3,5 +3,6 @@ def fileopening():
     file = open(file_path, "r+")
     lines = file.readlines()
     for line in lines:
-        print(line)
+        for letter in line:
+            print(letter)
     file.close()
