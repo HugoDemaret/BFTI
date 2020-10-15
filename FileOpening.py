@@ -1,12 +1,18 @@
 from binascii import *
+import math
 
-def imagecreator(array):
+def imagesize(array):
     pre_imagelength = len(array)
-    i = pre_imagelength // 2
-    print(array)
-    print("preimagelength = ", pre_imagelength)
-    print("i = ", i)
-
+    matrix_size = math.floor(math.sqrt(pre_imagelength+1))
+    return matrix_size
+def imagecreate(array, int):
+    matrix_size = int
+    image = [[]*matrix_size]*matrix_size
+    elements = array
+    for element in elements:
+        for i in range(matrix_size):
+            image.append(element)
+    print(image)
 
 def fileopening(int):
     if int == 1:
@@ -28,4 +34,4 @@ def fileopening(int):
             for letter in line_string:
                 ascii_value = a2b_uu(letter) #Convert the caracters from ascii to binary code
                 pre_image.append(ascii_value)
-    imagecreator(pre_image)
+    imagecreate(pre_image, imagesize(pre_image))
